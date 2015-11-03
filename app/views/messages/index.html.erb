@@ -1,0 +1,7 @@
+<%= render 'form' %>
+
+<% @messages.each do |message| %>
+  <%= message.to %>
+  <%= message.from %>
+  <%= message.body %>
+<% end %>
