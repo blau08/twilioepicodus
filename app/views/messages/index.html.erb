@@ -1,7 +1,10 @@
 <%= render 'form' %>
 
 <% @messages.each do |message| %>
-  <%= message.to %>
-  <%= message.from %>
-  <%= message.body %>
+  <li>
+    <%= message.to %>
+    <%= message.from %>
+    <%= message.body %>
+    <%= DateTime.parse(message.date_sent.to_s).in_time_zone("Pacific Time (US & Canada)").strftime("%I:%M %p") %>
+  </li>
 <% end %>

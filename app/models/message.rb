@@ -23,4 +23,5 @@ class Message < ActiveRecord::Base
     end
     response
   end
+
 end
