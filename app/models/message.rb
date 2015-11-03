@@ -14,6 +14,7 @@ class Message < ActiveRecord::Base
                     :To => to,
                     :From => from }
     ).execute
+    response = JSON.parse(response)
     rescue RestClient::BadRequest => error
       message = JSON.parse(error.response)['message']
       errors.add(:base, message)
